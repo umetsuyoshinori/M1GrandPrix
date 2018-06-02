@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RealmSample
 //
-//  Created by 梅津吉雅 on 2018/06/02.
-//  Copyright © 2018年 梅津吉雅. All rights reserved.
+//  Created by n00877 on 2017/01/17.
+//  Copyright © 2017年 Sample. All rights reserved.
 //
 
 import UIKit
