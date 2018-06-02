@@ -10,9 +10,9 @@ import RealmSwift
 
 class Item: Object{
     // 品名
-    dynamic var name: String? = nil
+    @objc dynamic var name: String? = nil
     // 金額
-    dynamic var price = 0
+    @objc dynamic var price = 0
     // 登録日時
-    dynamic var created = Date()
+    @objc dynamic var created = Date()
 }

@@ -7,6 +7,6 @@ target 'RealmSample' do
 
   # Pods for RealmSample
 
-pod 'RealmSwift'
+pod 'RealmSwift', '2.8.1'
 
 end
