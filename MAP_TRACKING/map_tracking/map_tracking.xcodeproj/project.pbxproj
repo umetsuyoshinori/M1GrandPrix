@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A413569820C25AF0007C0F53 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A413569720C25AF0007C0F53 /* CoreLocation.framework */; };
 		A413569920C25C1E007C0F53 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCB8ED91D9B49E900B74410 /* CoreMotion.framework */; };
+		A42DE69120C3886D00194E87 /* FunctionSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DE69020C3886D00194E87 /* FunctionSelectViewController.swift */; };
+		A42DE69320C38D1600194E87 /* MPMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DE69220C38D1600194E87 /* MPMusicViewController.swift */; };
+		A42DE69520C38FAD00194E87 /* MPMUSICViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DE69420C38FAD00194E87 /* MPMUSICViewController.swift */; };
 		A42EBCF520C2680C002CE810 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = A42EBCF420C2680C002CE810 /* splash.png */; };
 		FFCB8EC51D9B473200B74410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB8EC41D9B473200B74410 /* AppDelegate.swift */; };
 		FFCB8EC71D9B473200B74410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB8EC61D9B473200B74410 /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		A413569720C25AF0007C0F53 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A42DE69020C3886D00194E87 /* FunctionSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionSelectViewController.swift; sourceTree = "<group>"; };
+		A42DE69220C38D1600194E87 /* MPMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPMusicViewController.swift; sourceTree = "<group>"; };
+		A42DE69420C38FAD00194E87 /* MPMUSICViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MPMUSICViewController.swift; path = map_tracking/MPMUSICViewController.swift; sourceTree = "<group>"; };
 		A42EBCF420C2680C002CE810 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		FFCB8EC11D9B473200B74410 /* map_tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = map_tracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCB8EC41D9B473200B74410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,9 @@
 		FFCB8EB81D9B473200B74410 = {
 			isa = PBXGroup;
 			children = (
+				A42DE69020C3886D00194E87 /* FunctionSelectViewController.swift */,
+				A42DE69220C38D1600194E87 /* MPMusicViewController.swift */,
+				A42DE69420C38FAD00194E87 /* MPMUSICViewController.swift */,
 				FFCB8EC31D9B473200B74410 /* map_tracking */,
 				FFCB8EC21D9B473200B74410 /* Products */,
 				FFCB8ED61D9B49DF00B74410 /* Frameworks */,
@@ -122,6 +131,11 @@
 						DevelopmentTeam = 99M9UU7X43;
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -162,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42DE69520C38FAD00194E87 /* MPMUSICViewController.swift in Sources */,
+				A42DE69120C3886D00194E87 /* FunctionSelectViewController.swift in Sources */,
 				FFCB8EC71D9B473200B74410 /* ViewController.swift in Sources */,
 				FFCB8EC51D9B473200B74410 /* AppDelegate.swift in Sources */,
+				A42DE69320C38D1600194E87 /* MPMusicViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
