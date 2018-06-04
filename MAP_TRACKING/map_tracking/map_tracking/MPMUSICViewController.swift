@@ -18,9 +18,9 @@ class MPMUSICViewController: UIViewController, MPMediaPickerControllerDelegate {
     
     var player:MPMusicPlayerController!
     
+    //画面がロードされた途端に発動
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         player = MPMusicPlayerController.applicationMusicPlayer
         //player = MPMusicPlayerController.systemMusicPlayer()
@@ -32,9 +32,9 @@ class MPMUSICViewController: UIViewController, MPMediaPickerControllerDelegate {
         player.beginGeneratingPlaybackNotifications()
     }
     
+    //メモリ不足のときに発動
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func pick(sender: AnyObject) {

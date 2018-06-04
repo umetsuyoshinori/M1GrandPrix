@@ -16,22 +16,31 @@ class Location: Object {
     @objc dynamic var createdAt = Date(timeIntervalSince1970: 1)
 }
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
-    var locationManager: CLLocationManager!
+    // ロケーションマネージャの型を指定
+    var locationManager = CLLocationManager()
+    
     var locations: Results<Location>!
     var token: NotificationToken!
     var isUpdating = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //tableViewのデリゲート、データソースになる
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
-        // Do any additional setup after loading the view, typically from a nib.
-        self.locationManager = CLLocationManager()
+        //ロケーションマネージャを作る
+        //self.locationManager = CLLocationManager()
+        // アプリ利用中の位置情報の利用許可を得る
+        locationManager.requestAlwaysAuthorization()
+        //ロケーションマネージャのデリゲートになる
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.distanceFilter = 100
@@ -228,17 +237,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Table view data source
 
-    func numberOfSectionsInTableView(_ tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return self.locations.count
+        return self.locations.count 
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) 
 
         let location = self.locations[indexPath.row]
@@ -251,7 +260,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: - Table view delegate
 
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

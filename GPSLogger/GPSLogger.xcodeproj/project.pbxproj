@@ -13,7 +13,6 @@
 		210923711B6D02A2007A2CEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210923701B6D02A2007A2CEB /* Images.xcassets */; };
 		210923741B6D02A2007A2CEB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210923721B6D02A2007A2CEB /* LaunchScreen.xib */; };
 		210923801B6D02A2007A2CEB /* GPSLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2109237F1B6D02A2007A2CEB /* GPSLoggerTests.swift */; };
-		2109238A1B6D2390007A2CEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210923891B6D2390007A2CEB /* MapKit.framework */; };
 		9CFCC54162252F46CD35680B /* Pods_GPSLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +23,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 210923631B6D02A2007A2CEB;
 			remoteInfo = GPSLogger;
+		};
+		A4F3E34A20C524BC00A4D381 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2109235C1B6D02A2007A2CEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 210923781B6D02A2007A2CEB;
+			remoteInfo = GPSLoggerTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,7 +44,6 @@
 		210923791B6D02A2007A2CEB /* GPSLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPSLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2109237E1B6D02A2007A2CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2109237F1B6D02A2007A2CEB /* GPSLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLoggerTests.swift; sourceTree = "<group>"; };
-		210923891B6D2390007A2CEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6849A0B75B32C8996FDE1B1E /* Pods-GPSLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger.release.xcconfig"; sourceTree = "<group>"; };
 		D9C13D06FBAFD9B66EE3EA4E /* Pods-GPSLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2109238A1B6D2390007A2CEB /* MapKit.framework in Frameworks */,
 				9CFCC54162252F46CD35680B /* Pods_GPSLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +130,6 @@
 		4E215883E621DFA8D13AFD40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				210923891B6D2390007A2CEB /* MapKit.framework */,
 				EEEB805F193B1DC9A709B473 /* Pods.framework */,
 				3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */,
 			);
@@ -154,10 +157,12 @@
 				210923611B6D02A2007A2CEB /* Frameworks */,
 				210923621B6D02A2007A2CEB /* Resources */,
 				C0E854C1DCE4EAC8C3D3B94B /* [CP] Embed Pods Frameworks */,
+				009E03CF6904BB1D407260EA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A4F3E34B20C524BC00A4D381 /* PBXTargetDependency */,
 			);
 			name = GPSLogger;
 			productName = GPSLogger;
@@ -189,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Kosuke Ogawa";
 				TargetAttributes = {
 					210923631B6D02A2007A2CEB = {
@@ -199,6 +204,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
 							};
 						};
 					};
@@ -249,6 +257,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		009E03CF6904BB1D407260EA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75F1B7F725DEC795093E5E1D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +338,11 @@
 			target = 210923631B6D02A2007A2CEB /* GPSLogger */;
 			targetProxy = 2109237A1B6D02A2007A2CEB /* PBXContainerItemProxy */;
 		};
+		A4F3E34B20C524BC00A4D381 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 210923781B6D02A2007A2CEB /* GPSLoggerTests */;
+			targetProxy = A4F3E34A20C524BC00A4D381 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -349,12 +377,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -382,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -402,12 +432,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -428,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

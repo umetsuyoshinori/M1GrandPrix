@@ -22,8 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app will record your location information</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>このアプリの使用中に現在地の情報を使用します。</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>このアプリは現在地の情報を常に使用します</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
