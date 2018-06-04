@@ -16,3 +16,16 @@ class Item: Object{
     // 登録日時
     @objc dynamic var created = Date()
 }
+
+class SongInfo: Object{
+    // id
+    @objc dynamic var id: String? = nil
+    // 曲名
+    @objc dynamic var price: String? = nil
+    // 収録アルバム
+    @objc dynamic var albam: String? = nil
+    //アーティスト
+    @objc dynamic var artist: String? = nil
+    //ジャケット写真
+//    @objc dynamic var artworkId: String? = nil
+}

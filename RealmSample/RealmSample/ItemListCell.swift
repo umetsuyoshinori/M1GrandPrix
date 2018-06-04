@@ -20,3 +20,16 @@ class ItemListCell: UITableViewCell {
     
 }
 
+class SongListCell: UITableViewCell {
+    
+    @IBOutlet weak var Song: UILabel!
+    @IBOutlet weak var Albam: UILabel!
+    @IBOutlet weak var Artist: UILabel!
+    @IBOutlet weak var ArtworkId: UILabel!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+}
+
