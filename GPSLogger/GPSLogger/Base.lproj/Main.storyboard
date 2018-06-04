@@ -64,8 +64,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwt-BF-PFv">
-                                <rect key="frame" x="16" y="240" width="160" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwt-BF-PFv">
+                                <rect key="frame" x="16" y="240" width="81" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="uip-Rq-Fes"/>
                                 </constraints>
@@ -86,8 +86,8 @@
                                     <action selector="startButtonDidTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="msz-QS-779"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f8-qp-8ld">
-                                <rect key="frame" x="144" y="240" width="160" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f8-qp-8ld">
+                                <rect key="frame" x="230" y="240" width="74" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="t8B-Nd-xuT"/>
                                 </constraints>
@@ -108,19 +108,40 @@
                                     <action selector="clearButtonDidTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EjM-os-Riv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojW-TA-9AE">
+                                <rect key="frame" x="143.5" y="240" width="34" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Nm6-4a-71M"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Nm6-4a-71M"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Nm6-4a-71M"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="6f8-qp-8ld" secondAttribute="width" multiplier="2:1" id="5IF-s1-TdS"/>
+                            <constraint firstItem="ojW-TA-9AE" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="395-m8-YeK"/>
+                            <constraint firstAttribute="width" secondItem="6f8-qp-8ld" secondAttribute="width" multiplier="4:1" id="5IF-s1-TdS"/>
                             <constraint firstItem="rhQ-VZ-LzI" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="F7d-e6-PNx"/>
                             <constraint firstItem="Rwt-BF-PFv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="IUe-Vo-ZFH"/>
                             <constraint firstItem="BeY-Xv-kHa" firstAttribute="top" secondItem="rhQ-VZ-LzI" secondAttribute="bottom" id="McC-ef-eqz">
                                 <variation key="heightClass=regular" constant="44"/>
                             </constraint>
-                            <constraint firstItem="Rwt-BF-PFv" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="1:2" id="PKQ-7l-nVY"/>
+                            <constraint firstItem="Rwt-BF-PFv" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="1:4" id="PKQ-7l-nVY"/>
                             <constraint firstAttribute="trailing" secondItem="BeY-Xv-kHa" secondAttribute="trailing" id="PqC-H6-Oxr"/>
                             <constraint firstItem="6f8-qp-8ld" firstAttribute="top" secondItem="rhQ-VZ-LzI" secondAttribute="bottom" id="TPs-iP-7ey"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6f8-qp-8ld" secondAttribute="trailing" id="WN1-UX-EcE"/>
+                            <constraint firstItem="ojW-TA-9AE" firstAttribute="centerY" secondItem="6f8-qp-8ld" secondAttribute="centerY" id="X0J-B8-orD"/>
                             <constraint firstItem="Rwt-BF-PFv" firstAttribute="top" secondItem="rhQ-VZ-LzI" secondAttribute="bottom" id="cPA-gY-dYZ"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="BeY-Xv-kHa" secondAttribute="bottom" id="eY8-0c-IpE"/>
                             <constraint firstAttribute="trailing" secondItem="rhQ-VZ-LzI" secondAttribute="trailing" id="lPG-Hu-Yfx"/>
@@ -164,6 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.75" y="32.74647887323944"/>
         </scene>
     </scenes>
 </document>

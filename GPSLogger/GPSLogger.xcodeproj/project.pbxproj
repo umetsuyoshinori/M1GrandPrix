@@ -14,6 +14,7 @@
 		210923741B6D02A2007A2CEB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210923721B6D02A2007A2CEB /* LaunchScreen.xib */; };
 		210923801B6D02A2007A2CEB /* GPSLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2109237F1B6D02A2007A2CEB /* GPSLoggerTests.swift */; };
 		9CFCC54162252F46CD35680B /* Pods_GPSLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */; };
+		A47A7ABA20C541000020CD77 /* RealmLocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A7AB920C541000020CD77 /* RealmLocationObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		2109237F1B6D02A2007A2CEB /* GPSLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLoggerTests.swift; sourceTree = "<group>"; };
 		3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6849A0B75B32C8996FDE1B1E /* Pods-GPSLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger.release.xcconfig"; sourceTree = "<group>"; };
+		A47A7AB920C541000020CD77 /* RealmLocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocationObject.swift; sourceTree = "<group>"; };
 		D9C13D06FBAFD9B66EE3EA4E /* Pods-GPSLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger.debug.xcconfig"; sourceTree = "<group>"; };
 		EEEB805F193B1DC9A709B473 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				210923701B6D02A2007A2CEB /* Images.xcassets */,
 				210923721B6D02A2007A2CEB /* LaunchScreen.xib */,
 				210923671B6D02A2007A2CEB /* Supporting Files */,
+				A47A7AB920C541000020CD77 /* RealmLocationObject.swift */,
 			);
 			path = GPSLogger;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2109236C1B6D02A2007A2CEB /* ViewController.swift in Sources */,
+				A47A7ABA20C541000020CD77 /* RealmLocationObject.swift in Sources */,
 				2109236A1B6D02A2007A2CEB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

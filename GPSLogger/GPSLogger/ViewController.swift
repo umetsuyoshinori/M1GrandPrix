@@ -10,13 +10,10 @@ import UIKit
 import MapKit
 import RealmSwift
 
-class Location: Object {
-    @objc dynamic var latitude: Double = 0.0
-    @objc dynamic var longitude: Double = 0.0
-    @objc dynamic var createdAt = Date(timeIntervalSince1970: 1)
-}
+
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+    
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startButton: UIButton!
