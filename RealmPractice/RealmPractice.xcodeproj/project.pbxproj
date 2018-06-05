@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A420B27220C5870A00448C70 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A420B27120C5870A00448C70 /* PlaylistViewController.swift */; };
+		A420B27420C61B2900448C70 /* MPMUSICViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A420B27320C61B2900448C70 /* MPMUSICViewController.swift */; };
 		A47A7AC820C5632B0020CD77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A7AC720C5632B0020CD77 /* AppDelegate.swift */; };
 		A47A7ACA20C5632B0020CD77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A7AC920C5632B0020CD77 /* ViewController.swift */; };
 		A47A7ACD20C5632B0020CD77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47A7ACB20C5632B0020CD77 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 		A47A7AF620C567470020CD77 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A7AF520C567470020CD77 /* Realm.framework */; };
 		A47A7AF820C567470020CD77 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A7AF720C567470020CD77 /* RealmSwift.framework */; };
 		A47A7AFA20C56A220020CD77 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A7AF920C56A220020CD77 /* Song.swift */; };
+		A4C63F4920C643600004CDD6 /* UIColor+onoColorSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F4820C643600004CDD6 /* UIColor+onoColorSquare.swift */; };
+		A4C63F4B20C66ECE0004CDD6 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */; };
 		DDEE2153C685250D3BB00111 /* Pods_RealmPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F2E12685702B2AA4EDB99C /* Pods_RealmPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,8 @@
 		13F2E12685702B2AA4EDB99C /* Pods_RealmPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A79AB3B0FF778725321961 /* Pods-RealmPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealmPractice/Pods-RealmPractice.release.xcconfig"; sourceTree = "<group>"; };
 		9FC88AB3F2E166ADCB27CDD6 /* Pods-RealmPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmPractice/Pods-RealmPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		A420B27120C5870A00448C70 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		A420B27320C61B2900448C70 /* MPMUSICViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPMUSICViewController.swift; sourceTree = "<group>"; };
 		A47A7AC420C5632B0020CD77 /* RealmPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47A7AC720C5632B0020CD77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A47A7AC920C5632B0020CD77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,8 @@
 		A47A7AF520C567470020CD77 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47A7AF720C567470020CD77 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47A7AF920C56A220020CD77 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		A4C63F4820C643600004CDD6 /* UIColor+onoColorSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+onoColorSquare.swift"; sourceTree = "<group>"; };
+		A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		A47A7ABB20C5632B0020CD77 = {
 			isa = PBXGroup;
 			children = (
+				A4C63F4720C642FD0004CDD6 /* Extensions */,
 				A47A7AC620C5632B0020CD77 /* RealmPractice */,
 				A47A7ADB20C5632C0020CD77 /* RealmPracticeTests */,
 				A47A7AE620C5632C0020CD77 /* RealmPracticeUITests */,
@@ -124,7 +133,10 @@
 				A47A7AC720C5632B0020CD77 /* AppDelegate.swift */,
 				A47A7AC920C5632B0020CD77 /* ViewController.swift */,
 				A47A7AF920C56A220020CD77 /* Song.swift */,
+				A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */,
 				A47A7ACB20C5632B0020CD77 /* Main.storyboard */,
+				A420B27120C5870A00448C70 /* PlaylistViewController.swift */,
+				A420B27320C61B2900448C70 /* MPMUSICViewController.swift */,
 				A47A7ACE20C5632C0020CD77 /* Assets.xcassets */,
 				A47A7AD020C5632C0020CD77 /* LaunchScreen.storyboard */,
 				A47A7AD320C5632C0020CD77 /* Info.plist */,
@@ -148,6 +160,14 @@
 				A47A7AE920C5632C0020CD77 /* Info.plist */,
 			);
 			path = RealmPracticeUITests;
+			sourceTree = "<group>";
+		};
+		A4C63F4720C642FD0004CDD6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4C63F4820C643600004CDD6 /* UIColor+onoColorSquare.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B109BFBD261AA3E94637551C /* Frameworks */ = {
@@ -231,6 +251,11 @@
 				TargetAttributes = {
 					A47A7AC320C5632B0020CD77 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					A47A7AD720C5632C0020CD77 = {
 						CreatedOnToolsVersion = 9.4;
@@ -350,7 +375,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C63F4B20C66ECE0004CDD6 /* Artwork.swift in Sources */,
+				A420B27420C61B2900448C70 /* MPMUSICViewController.swift in Sources */,
+				A420B27220C5870A00448C70 /* PlaylistViewController.swift in Sources */,
 				A47A7AFA20C56A220020CD77 /* Song.swift in Sources */,
+				A4C63F4920C643600004CDD6 /* UIColor+onoColorSquare.swift in Sources */,
 				A47A7ACA20C5632B0020CD77 /* ViewController.swift in Sources */,
 				A47A7AC820C5632B0020CD77 /* AppDelegate.swift in Sources */,
 			);
