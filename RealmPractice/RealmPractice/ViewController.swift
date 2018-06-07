@@ -22,19 +22,19 @@ class ViewController: UIViewController{
     //遷移先の画面に文字列を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPlay" {
-            let moved:MPMUSICViewController = segue.destination as! MPMUSICViewController
-            
-            let realm = try! Realm()
-            if realm.objects(Song.self).count == 0 {
-                moved.sendText = "NO MUSIC, NO LIFE"
-            }
-            else if realm.objects(Song.self).count > 0 {
-                moved.sendText = ""
-            }
+//            let moved:MPMUSICViewController = segue.destination as! MPMUSICViewController
+//
+//            let realm = try! Realm()
+//            if realm.objects(Song.self).count == 0 {
+//                moved.sendText = "NO MUSIC, NO LIFE"
+//            }
+//            else if realm.objects(Song.self).count > 0 {
+//                moved.sendText = ""
+//            }
         }
     }
     
-    //realmDB内にオブジェクトがあるかないかでボタン押下時の処理を分岐
+    //ボタンを押したら飛ぶ
     @IBAction func Judge0(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toPlay", sender: nil)
     }

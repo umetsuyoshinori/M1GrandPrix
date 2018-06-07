@@ -12,5 +12,5 @@ import RealmSwift
  プロパティはdynamic varで宣言します。*/
 class Artwork: Object {
     @objc dynamic var id : Int = 0
-    @objc dynamic var imageData: NSData? = nil
+    @objc dynamic var imageData: Data? = nil
 }

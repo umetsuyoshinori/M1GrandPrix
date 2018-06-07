@@ -19,8 +19,14 @@
 		A47A7AF620C567470020CD77 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A7AF520C567470020CD77 /* Realm.framework */; };
 		A47A7AF820C567470020CD77 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47A7AF720C567470020CD77 /* RealmSwift.framework */; };
 		A47A7AFA20C56A220020CD77 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A7AF920C56A220020CD77 /* Song.swift */; };
+		A4B1017520C6D82B0055EB52 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B1017420C6D82B0055EB52 /* Query.swift */; };
 		A4C63F4920C643600004CDD6 /* UIColor+onoColorSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F4820C643600004CDD6 /* UIColor+onoColorSquare.swift */; };
 		A4C63F4B20C66ECE0004CDD6 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */; };
+		A4C63F4D20C692470004CDD6 /* MPMediaItem+eriteInRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F4C20C692470004CDD6 /* MPMediaItem+eriteInRealm.swift */; };
+		A4C63F4F20C694E30004CDD6 /* MPMediaItem+DisplayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F4E20C694E30004CDD6 /* MPMediaItem+DisplayInfo.swift */; };
+		A4C63F5120C69D6F0004CDD6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F5020C69D6F0004CDD6 /* Common.swift */; };
+		A4C63F5320C69EF80004CDD6 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C63F5220C69EF80004CDD6 /* music.png */; };
+		A4C63F5820C6AC650004CDD6 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C63F5720C6AC650004CDD6 /* Media.swift */; };
 		DDEE2153C685250D3BB00111 /* Pods_RealmPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F2E12685702B2AA4EDB99C /* Pods_RealmPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +69,14 @@
 		A47A7AF520C567470020CD77 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47A7AF720C567470020CD77 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47A7AF920C56A220020CD77 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		A4B1017420C6D82B0055EB52 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		A4C63F4820C643600004CDD6 /* UIColor+onoColorSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+onoColorSquare.swift"; sourceTree = "<group>"; };
 		A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		A4C63F4C20C692470004CDD6 /* MPMediaItem+eriteInRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MPMediaItem+eriteInRealm.swift"; sourceTree = "<group>"; };
+		A4C63F4E20C694E30004CDD6 /* MPMediaItem+DisplayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MPMediaItem+DisplayInfo.swift"; sourceTree = "<group>"; };
+		A4C63F5020C69D6F0004CDD6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A4C63F5220C69EF80004CDD6 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
+		A4C63F5720C6AC650004CDD6 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,11 @@
 		A47A7ABB20C5632B0020CD77 = {
 			isa = PBXGroup;
 			children = (
+				A47A7ACB20C5632B0020CD77 /* Main.storyboard */,
+				A4C63F5020C69D6F0004CDD6 /* Common.swift */,
+				A4B1017420C6D82B0055EB52 /* Query.swift */,
+				A4C63F5220C69EF80004CDD6 /* music.png */,
+				A4C63F5620C6AC3B0004CDD6 /* realmClass */,
 				A4C63F4720C642FD0004CDD6 /* Extensions */,
 				A47A7AC620C5632B0020CD77 /* RealmPractice */,
 				A47A7ADB20C5632C0020CD77 /* RealmPracticeTests */,
@@ -132,9 +149,6 @@
 			children = (
 				A47A7AC720C5632B0020CD77 /* AppDelegate.swift */,
 				A47A7AC920C5632B0020CD77 /* ViewController.swift */,
-				A47A7AF920C56A220020CD77 /* Song.swift */,
-				A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */,
-				A47A7ACB20C5632B0020CD77 /* Main.storyboard */,
 				A420B27120C5870A00448C70 /* PlaylistViewController.swift */,
 				A420B27320C61B2900448C70 /* MPMUSICViewController.swift */,
 				A47A7ACE20C5632C0020CD77 /* Assets.xcassets */,
@@ -166,8 +180,20 @@
 			isa = PBXGroup;
 			children = (
 				A4C63F4820C643600004CDD6 /* UIColor+onoColorSquare.swift */,
+				A4C63F4C20C692470004CDD6 /* MPMediaItem+eriteInRealm.swift */,
+				A4C63F4E20C694E30004CDD6 /* MPMediaItem+DisplayInfo.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4C63F5620C6AC3B0004CDD6 /* realmClass */ = {
+			isa = PBXGroup;
+			children = (
+				A47A7AF920C56A220020CD77 /* Song.swift */,
+				A4C63F4A20C66ECE0004CDD6 /* Artwork.swift */,
+				A4C63F5720C6AC650004CDD6 /* Media.swift */,
+			);
+			path = realmClass;
 			sourceTree = "<group>";
 		};
 		B109BFBD261AA3E94637551C /* Frameworks */ = {
@@ -293,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A47A7AD220C5632C0020CD77 /* LaunchScreen.storyboard in Resources */,
+				A4C63F5320C69EF80004CDD6 /* music.png in Resources */,
 				A47A7ACF20C5632C0020CD77 /* Assets.xcassets in Resources */,
 				A47A7ACD20C5632B0020CD77 /* Main.storyboard in Resources */,
 			);
@@ -375,13 +402,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C63F5820C6AC650004CDD6 /* Media.swift in Sources */,
 				A4C63F4B20C66ECE0004CDD6 /* Artwork.swift in Sources */,
 				A420B27420C61B2900448C70 /* MPMUSICViewController.swift in Sources */,
+				A4C63F4F20C694E30004CDD6 /* MPMediaItem+DisplayInfo.swift in Sources */,
+				A4B1017520C6D82B0055EB52 /* Query.swift in Sources */,
 				A420B27220C5870A00448C70 /* PlaylistViewController.swift in Sources */,
 				A47A7AFA20C56A220020CD77 /* Song.swift in Sources */,
 				A4C63F4920C643600004CDD6 /* UIColor+onoColorSquare.swift in Sources */,
+				A4C63F5120C69D6F0004CDD6 /* Common.swift in Sources */,
 				A47A7ACA20C5632B0020CD77 /* ViewController.swift in Sources */,
 				A47A7AC820C5632B0020CD77 /* AppDelegate.swift in Sources */,
+				A4C63F4D20C692470004CDD6 /* MPMediaItem+eriteInRealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

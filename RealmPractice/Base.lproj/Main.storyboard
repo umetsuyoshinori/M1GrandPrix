@@ -105,16 +105,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="HFR-4j-RaH" kind="modal" id="A21-sA-s9O"/>
+                                    <action selector="backToPlay:" destination="uLb-k4-8qI" eventType="touchUpInside" id="vpC-Zi-yPA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2I-WE-Iom">
-                                <rect key="frame" x="16" y="18" width="46" height="30"/>
+                                <rect key="frame" x="16" y="19" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick"/>
-                                <connections>
-                                    <action selector="pickWithSender:" destination="uLb-k4-8qI" eventType="touchUpInside" id="5x7-RT-ach"/>
-                                </connections>
+                                <state key="normal" title="Pick:Unable"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57198624890000005" blue="0.99601936319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,6 +119,7 @@
                     </view>
                     <connections>
                         <outlet property="table" destination="gNd-Mk-4lD" id="3XK-Sh-3i0"/>
+                        <segue destination="HFR-4j-RaH" kind="modal" identifier="fromListToPlay" id="gFV-6Y-ZwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNU-G2-vtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,12 +139,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUT-hJ-B3o">
-                                <rect key="frame" x="36" y="40" width="30" height="30"/>
+                                <rect key="frame" x="10" y="40" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick"/>
-                                <connections>
-                                    <action selector="pickWithSender:" destination="HFR-4j-RaH" eventType="touchUpInside" id="ybp-T0-K1H"/>
-                                </connections>
+                                <state key="normal" title="Pick:Unable"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6px-CD-3f0">
                                 <rect key="frame" x="16" y="468" width="343" height="21"/>
@@ -209,7 +204,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="List"/>
                                 <connections>
-                                    <segue destination="uLb-k4-8qI" kind="modal" id="rha-qh-HHs"/>
+                                    <segue destination="uLb-k4-8qI" kind="modal" id="g4O-lP-xeW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDJ-w3-8Uq">
@@ -238,6 +233,8 @@
                         <outlet property="imageView" destination="Qr2-RX-YcH" id="NGB-QF-jXO"/>
                         <outlet property="repeatButton" destination="Tnn-7s-5P1" id="J54-vB-cX3"/>
                         <outlet property="songLabel" destination="6px-CD-3f0" id="ztN-Px-HKh"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="toOption" id="SGI-fI-MnS"/>
+                        <segue destination="uLb-k4-8qI" kind="modal" identifier="fromPlaytoList" id="KZQ-sP-KFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feq-rl-iS7" sceneMemberID="firstResponder"/>
@@ -246,6 +243,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A21-sA-s9O"/>
+        <segue reference="gFV-6Y-ZwZ"/>
+        <segue reference="g4O-lP-xeW"/>
+        <segue reference="SGI-fI-MnS"/>
     </inferredMetricsTieBreakers>
 </document>
