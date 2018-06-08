@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2109236A1B6D02A2007A2CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210923691B6D02A2007A2CEB /* AppDelegate.swift */; };
-		2109236C1B6D02A2007A2CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2109236B1B6D02A2007A2CEB /* ViewController.swift */; };
 		2109236F1B6D02A2007A2CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2109236D1B6D02A2007A2CEB /* Main.storyboard */; };
 		210923711B6D02A2007A2CEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210923701B6D02A2007A2CEB /* Images.xcassets */; };
 		210923741B6D02A2007A2CEB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210923721B6D02A2007A2CEB /* LaunchScreen.xib */; };
 		210923801B6D02A2007A2CEB /* GPSLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2109237F1B6D02A2007A2CEB /* GPSLoggerTests.swift */; };
 		9CFCC54162252F46CD35680B /* Pods_GPSLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */; };
+		A4419F2420CA813100B0AA1C /* NewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4419F2320CA813100B0AA1C /* NewTableView.swift */; };
+		A4419F2620CAB0BA00B0AA1C /* testDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4419F2520CAB0BA00B0AA1C /* testDelegate.swift */; };
 		A47A7ABA20C541000020CD77 /* RealmLocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47A7AB920C541000020CD77 /* RealmLocationObject.swift */; };
+		A4B1017B20C8F0360055EB52 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B1017A20C8F0360055EB52 /* secondViewController.swift */; };
+		A4B1018720C95BC90055EB52 /* sharedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B1018620C95BC90055EB52 /* sharedLocation.swift */; };
+		A4B1018920C95C040055EB52 /* newViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B1018820C95C040055EB52 /* newViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 		210923641B6D02A2007A2CEB /* GPSLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPSLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		210923681B6D02A2007A2CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210923691B6D02A2007A2CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2109236B1B6D02A2007A2CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2109236E1B6D02A2007A2CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		210923701B6D02A2007A2CEB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		210923731B6D02A2007A2CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -47,7 +50,12 @@
 		2109237F1B6D02A2007A2CEB /* GPSLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLoggerTests.swift; sourceTree = "<group>"; };
 		3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPSLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6849A0B75B32C8996FDE1B1E /* Pods-GPSLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger.release.xcconfig"; sourceTree = "<group>"; };
+		A4419F2320CA813100B0AA1C /* NewTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableView.swift; sourceTree = "<group>"; };
+		A4419F2520CAB0BA00B0AA1C /* testDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testDelegate.swift; sourceTree = "<group>"; };
 		A47A7AB920C541000020CD77 /* RealmLocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLocationObject.swift; sourceTree = "<group>"; };
+		A4B1017A20C8F0360055EB52 /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
+		A4B1018620C95BC90055EB52 /* sharedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sharedLocation.swift; sourceTree = "<group>"; };
+		A4B1018820C95C040055EB52 /* newViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newViewController.swift; sourceTree = "<group>"; };
 		D9C13D06FBAFD9B66EE3EA4E /* Pods-GPSLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPSLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPSLogger/Pods-GPSLogger.debug.xcconfig"; sourceTree = "<group>"; };
 		EEEB805F193B1DC9A709B473 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,6 +82,11 @@
 		2109235B1B6D02A2007A2CEB = {
 			isa = PBXGroup;
 			children = (
+				A4419F2320CA813100B0AA1C /* NewTableView.swift */,
+				A4419F2520CAB0BA00B0AA1C /* testDelegate.swift */,
+				2109236D1B6D02A2007A2CEB /* Main.storyboard */,
+				A4B1018120C906720055EB52 /* ViewController */,
+				A4B1018020C9065F0055EB52 /* Class */,
 				210923661B6D02A2007A2CEB /* GPSLogger */,
 				2109237C1B6D02A2007A2CEB /* GPSLoggerTests */,
 				210923651B6D02A2007A2CEB /* Products */,
@@ -95,12 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				210923691B6D02A2007A2CEB /* AppDelegate.swift */,
-				2109236B1B6D02A2007A2CEB /* ViewController.swift */,
-				2109236D1B6D02A2007A2CEB /* Main.storyboard */,
 				210923701B6D02A2007A2CEB /* Images.xcassets */,
 				210923721B6D02A2007A2CEB /* LaunchScreen.xib */,
 				210923671B6D02A2007A2CEB /* Supporting Files */,
-				A47A7AB920C541000020CD77 /* RealmLocationObject.swift */,
 			);
 			path = GPSLogger;
 			sourceTree = "<group>";
@@ -137,6 +147,24 @@
 				3546AE491F5B2B4883CC1B0D /* Pods_GPSLogger.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4B1018020C9065F0055EB52 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				A47A7AB920C541000020CD77 /* RealmLocationObject.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		A4B1018120C906720055EB52 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A4B1017A20C8F0360055EB52 /* secondViewController.swift */,
+				A4B1018620C95BC90055EB52 /* sharedLocation.swift */,
+				A4B1018820C95C040055EB52 /* newViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		F80765199724A70A335D1D49 /* Pods */ = {
@@ -320,9 +348,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2109236C1B6D02A2007A2CEB /* ViewController.swift in Sources */,
+				A4B1018920C95C040055EB52 /* newViewController.swift in Sources */,
+				A4419F2620CAB0BA00B0AA1C /* testDelegate.swift in Sources */,
 				A47A7ABA20C541000020CD77 /* RealmLocationObject.swift in Sources */,
+				A4419F2420CA813100B0AA1C /* NewTableView.swift in Sources */,
+				A4B1017B20C8F0360055EB52 /* secondViewController.swift in Sources */,
 				2109236A1B6D02A2007A2CEB /* AppDelegate.swift in Sources */,
+				A4B1018720C95BC90055EB52 /* sharedLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

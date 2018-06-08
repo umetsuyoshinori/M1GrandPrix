@@ -12,212 +12,221 @@ import RealmSwift
 
 
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+class secondViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-
-    // ロケーションマネージャの型を指定
+    
+    // CLLocationManagerクラスのインスタンスを作成
     var locationManager = CLLocationManager()
     
     var locations: Results<Location>!
     var token: NotificationToken!
     var isUpdating = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //tableViewのデリゲート、データソースになる
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
-        //ロケーションマネージャを作る
-        //self.locationManager = CLLocationManager()
+        
         // アプリ利用中の位置情報の利用許可を得る
         locationManager.requestAlwaysAuthorization()
         //ロケーションマネージャのデリゲートになる
         self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.distanceFilter = 100
-
-        // Delete old location objects
+        //求める精度は最高
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        //メートル離れた時
+        self.locationManager.distanceFilter = 5
+        
+        // 前日までのロケーションオブジェクトを削除
         self.deleteOldLocations()
-
-        // Load stored location objects
+        
+        // 蓄積したロケーション情報を読み込み
         self.locations = self.loadStoredLocations()
-
-        // Drop pins
+        
+        // ピンを落とす
         for location in self.locations {
             self.dropPin(at: location)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
     // MARK: - Private methods
-
+    
+    //（スタートボタンをタップ）
     @IBAction func startButtonDidTap(_ sender: AnyObject) {
         self.toggleLocationUpdate()
     }
-
+    
+    //（クリアボタンをタップ）
     @IBAction func clearButtonDidTap(_ sender: AnyObject) {
         self.deleteAllLocations()
         self.locations = self.loadStoredLocations()
         self.removeAllAnnotations()
         self.tableView.reloadData()
     }
-
-    // Load locations stored in realm at the table view
+    
+    // realmに保存してあるロケーション情報をテーブルビューに読み込み
     fileprivate func loadStoredLocations() -> Results<Location> {
-        // Get the default Realm
+        // レルム使う
         let realm = try! Realm()
-
-        // Load recent location objects
+        
+        // 最近のロケーションオブジェクトを読み込む
         return realm.objects(Location.self).sorted(byKeyPath: "createdAt", ascending: false)
     }
-
-    // Start or Stop location update
+    
+    // ロケーションの更新を開始/停止
     fileprivate func toggleLocationUpdate() {
         let realm = try! Realm()
         if self.isUpdating {
-            // Stop
+            // 停止
             self.isUpdating = false
             self.locationManager.stopUpdatingLocation()
             self.startButton.setTitle("Start", for: UIControlState())
-
-            // Remove a previously registered notification
+            
+            // 以前蓄積した通知を消去
             if let token = self.token {
                 token.invalidate()
             }
         } else {
-            // Start
+            // 開始
             self.isUpdating = true
             self.locationManager.startUpdatingLocation()
             self.startButton.setTitle("Stop", for: UIControlState())
-
-            // Add a notification handler for changes
+            
+            // 変更に対し，ノーティフィケーションハンドラを追加
             self.token = realm.observe {
                 [weak self] notification, realm in
                 self?.tableView.reloadData()
             }
         }
     }
-
-    // Store object
+    
+    // オブジェクトをrealmに追加
     fileprivate func addCurrentLocation(_ rowLocation: CLLocation) {
         let location = makeLocation(rawLocation: rowLocation)
-
-        // Get the default Realm
+        
+        // レルム使う
         let realm = try! Realm()
-
-        // Add to the Realm inside a transaction
+        
+        //トランザクションをレルム内部に格納
         try! realm.write {
             realm.add(location)
         }
     }
-
-    // Delete old (-1 day) objects in a background thread
+    
+    // バックグラウンドスレッドで，昨日までのオブジェクトを削除
     fileprivate func deleteOldLocations() {
         DispatchQueue.global().async {
-            // Get the default Realm
+            // レルム使う
             let realm = try! Realm()
-
-            // Old Locations stored in Realm
+            
+            // レルム内の古いロケーションオブジェクト
             let oldLocations = realm.objects(Location.self).filter(NSPredicate(format:"createdAt < %@", NSDate().addingTimeInterval(-86400)))
-
-            // Delete an object with a transaction
+            
+            // オブジェクトをトランザクションとともに消去
             try! realm.write {
                 realm.delete(oldLocations)
             }
         }
     }
-
-    // Delete all location objects from realm
+    
+    // レルムから全てのロケーションオブジェクトを消去
     fileprivate func deleteAllLocations() {
-        // Get the default Realm
+        // レルム使う
         let realm = try! Realm()
-
-        // Delete all objects from the realm
+        
+        // レルムから全てのオブジェクトを削除
         try! realm.write {
             realm.deleteAll()
         }
     }
-
-    // Make Location object from CLLocation
+    
+    // CLLocationからロケーションオブジェクトを作成
     fileprivate func makeLocation(rawLocation: CLLocation) -> Location {
         let location = Location()
         location.latitude = rawLocation.coordinate.latitude
         location.longitude = rawLocation.coordinate.longitude
         location.createdAt = Date()
+        location.song = "song"
         return location
     }
-
-    // Drop pin on the map
+    
+    // マップにピンを落とす
     fileprivate func dropPin(at location: Location) {
+        //初期位置(0,0)でないとき
         if location.latitude != 0 && location.longitude != 0 {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
             annotation.title = "\(location.latitude),\(location.longitude)"
-            annotation.subtitle = location.createdAt.description
+            annotation.subtitle = location.createdAt.description + location.song
             self.mapView.addAnnotation(annotation)
         }
     }
-
-    // Remove all pins on the map
+    
+    // マップから全てピンを消去
     fileprivate func removeAllAnnotations() {
         let annotations = self.mapView.annotations.filter {
             $0 !== self.mapView.userLocation
         }
         self.mapView.removeAnnotations(annotations)
     }
-
-    // MARK: - CLLocationManager delegate
-
+    
+    // MARK: - CLLocationManagerのデリゲート
+    //位置情報の利用申請が完了した直後に発動
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // 位置情報の利用許可が得られなかった場合場合，許可を得る
         if status == CLAuthorizationStatus.notDetermined {
             locationManager.requestAlwaysAuthorization()
-        }
+        }// 位置情報の利用許可が得られた場合，マップを形成する
         else if status == CLAuthorizationStatus.authorizedAlways {
-            // Center user location on the map
+            //縮尺
             let span = MKCoordinateSpanMake(0.003, 0.003)
-            let region = MKCoordinateRegionMake(self.mapView.userLocation.coordinate, span)
+            //中心座標と縮尺から表示領域
+            let region = MKCoordinateRegionMake(self.mapView.userLocation.coordinate,span)
+            //マップのオブジェクトに表示領域をセット
             self.mapView.setRegion(region, animated:true)
+            //マップのオブジェクトに現在位置のトラッキング方法を指定
             self.mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
         }
     }
-
+    
+    //位置が変更になった直後に発動
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:[CLLocation]) {
+        //
         guard let newLocation = locations.last else {
             return
         }
-
+        
         if !CLLocationCoordinate2DIsValid(newLocation.coordinate) {
             return
         }
-
+        // 新しい位置情報をrealmに追加
         self.addCurrentLocation(newLocation)
-
+        
         let location = makeLocation(rawLocation: newLocation)
         dropPin(at: location)
     }
-
-
+    
+    
     // MARK: - MKMapView delegate
-
+    
     func mapView(_ mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-
+        
         if annotation is MKUserLocation {
             return nil
         }
-
+        
         let reuseId = "annotationIdentifier"
-
+        
         var pinView = self.mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
@@ -227,36 +236,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         else {
             pinView?.annotation = annotation
         }
-
+        
         return pinView
     }
-
-
+    
+    
     // MARK: - Table view data source
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return self.locations.count 
+        return self.locations.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) 
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
+        
         let location = self.locations[indexPath.row]
         cell.textLabel?.text = "\(location.latitude),\(location.longitude)"
         cell.detailTextLabel?.text = location.createdAt.description
-
+        
         return cell
     }
-
-
+    
+    
     // MARK: - Table view delegate
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
