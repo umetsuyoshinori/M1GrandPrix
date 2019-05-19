@@ -107,3 +107,7 @@ OtomO/OtomO.xcodeproj/xcuserdata/Mizutori.xcuserdatad/xcschemes
 OtomO/OtomO.xcodeproj/xcuserdata/yosh.u_pro.xcuserdatad/xcschemes
 OtomO/OtomO.xcworkspace
 OtomO/Pods/Pods.xcodeproj
+*.MP4
+*.mp3
+*.zip
+*.dmg
